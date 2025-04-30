@@ -43,7 +43,7 @@ npm install
 mkdir -p chunks intermediates reducer_inputs reducer_outputs
 ```
 
-3. Divida seu arquivo de dados em 10 partes e salve os trechos como `chunk0.txt` até `chunk9.txt` dentro da pasta `chunks/`.
+3. Divida seus dados em 10 partes e salve os arquivos como `chunk0.txt` até `chunk9.txt` dentro da pasta `chunks/`.
 
 4. Execute o ambiente Docker:
 
