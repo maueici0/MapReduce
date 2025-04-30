@@ -32,9 +32,15 @@
 - Docker
 - Docker Compose
 
-1. Divida seu arquivo de dados em 10 partes e salve os trechos como `chunk0.txt` até `chunk9.txt` dentro da pasta `chunks/`.
+1. Instale as depências 
 
-2. Execute o ambiente Docker:
+```bash
+npm install
+```
+
+2. Divida seu arquivo de dados em 10 partes e salve os trechos como `chunk0.txt` até `chunk9.txt` dentro da pasta `chunks/`.
+
+3. Execute o ambiente Docker:
 
 ```bash
 docker-compose up --build
