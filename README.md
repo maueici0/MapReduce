@@ -1,5 +1,7 @@
 # Atividade MapReduce
 
+Desenvolvido por [Maurício Bernardo](https://github.com/maueici0) e [Marianna Lopes ](https://github.com/MariLopes1223) para a disciplina de Sistemas Distribuidos.
+
 ### 1. Estrutura do Projeto
 
 ```
