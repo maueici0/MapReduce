@@ -7,6 +7,7 @@ const redis = createClient({ url: 'redis://redis:6379' });
 await redis.connect();
 
 while (true) {
+
     const task = await redis.brPop('map_tasks', 0);
     const chunkFile = task.element;
 
@@ -28,4 +29,5 @@ while (true) {
 
     await redis.rPush("mapper_done", "done");
     console.log(`Mapper finalizou ${chunkFile}`);
+
 }
