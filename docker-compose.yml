@@ -1,0 +1,63 @@
+services:
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  coordinator:
+    build: .
+    depends_on:
+      - redis
+    volumes:
+      - .:/app
+    command: node coordinator.js
+
+  shuffle:
+    build: .
+    depends_on:
+      - redis
+    volumes:
+      - .:/app
+    command: node shuffle.js
+
+  mapper1:
+    build: .
+    depends_on:
+      - redis
+    volumes:
+      - .:/app
+    command: node mapper.js
+
+  mapper2:
+    build: .
+    depends_on:
+      - redis
+    volumes:
+      - .:/app
+    command: node mapper.js
+
+  mapper3:
+    build: .
+    depends_on:
+      - redis
+    volumes:
+      - .:/app
+    command: node mapper.js
+
+  reducer1:
+    build: .
+    depends_on:
+      - redis
+    volumes:
+      - .:/app
+    command: node reducer.js
+
+  reducer2:
+    build: .
+    depends_on:
+      - redis
+    volumes:
+      - .:/app
+    command: node reducer.js
+
