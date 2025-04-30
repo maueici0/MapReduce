@@ -32,15 +32,20 @@
 - Docker
 - Docker Compose
 
-1. Instale as depências 
+1. Instale as depências:
 
 ```bash
 npm install
 ```
+2. Crie os diretórios necessários:
 
-2. Divida seu arquivo de dados em 10 partes e salve os trechos como `chunk0.txt` até `chunk9.txt` dentro da pasta `chunks/`.
+```bash
+mkdir -p chunks intermediates reducer_inputs reducer_outputs
+```
 
-3. Execute o ambiente Docker:
+3. Divida seu arquivo de dados em 10 partes e salve os trechos como `chunk0.txt` até `chunk9.txt` dentro da pasta `chunks/`.
+
+4. Execute o ambiente Docker:
 
 ```bash
 docker-compose up --build
