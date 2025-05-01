@@ -1,9 +1,12 @@
 export function map(text) {
-    return text
-      .toLowerCase()
-      .replace(/[^\w\s]/g, '')
-      .split(/\s+/)
-      .filter(Boolean)
-      .map(word => [word, 1]);
-  }
-  
+  const cleanedText = text
+    .toLowerCase()
+    .replace(/[^a-zA-Z0-9,?"\s]/g, '')
+    .replace(/["]+/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  const words = cleanedText.split(/\s|,/).filter(Boolean);
+
+  return words.map(word => [word, 1]);
+}

@@ -13,14 +13,6 @@ services:
       - .:/app
     command: node coordinator.js
 
-  shuffle:
-    build: .
-    depends_on:
-      - redis
-    volumes:
-      - .:/app
-    command: node shuffle.js
-
   mapper1:
     build: .
     depends_on:

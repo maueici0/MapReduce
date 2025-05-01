@@ -22,7 +22,11 @@ for (const file of files) {
     const content = JSON.parse(fs.readFileSync(path.join(intermediateDir, file), 'utf-8'));
     for (const [word, count] of Object.entries(content)) {
         const index = getReducerIndex(word);
-        reducerGroups[index][word] = (reducerGroups[index][word] || []).concat(count);
+        if (!Array.isArray(reducerGroups[index][word])) {
+            reducerGroups[index][word] = [];
+        }
+        reducerGroups[index][word].push(count);
+
     }
 }
 

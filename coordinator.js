@@ -35,7 +35,8 @@ console.log('Todas as tarefas dos mappers foram enfileiradas.');
 
 console.log('Aguardando conclusão dos mappers...');
 while (true) {
-    const doneCount = parseInt(await redis.sendCommand(['LLEN', 'mapper_done']));
+    const doneCount = await redis.lLen('mapper_done');
+    console.log(`Progresso dos mappers: ${doneCount}/10`);
     if (doneCount >= 10) break;
     await new Promise(res => setTimeout(res, 1000));
 }

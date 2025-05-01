@@ -2,4 +2,6 @@
 /reducer_inputs/*
 /reducer_outputs/*
 /chunks/*
+/intermediates
 data.txt
+final_result.txt
